@@ -55,7 +55,7 @@ ComputeResponseTrajectories <- function(bsts.model) {
   state.samples <- GetPosteriorStateSamples(bsts.model)
 
   # Get observation noise standard deviation samples
-  burn <- SuggestBurn(0.1, bsts.model)
+  burn <- SuggestBurn(0.5, bsts.model)
   assert_that(burn > 0)
   sigma.obs <- bsts.model$sigma.obs[-seq_len(burn)]  # e.g., 900
 
